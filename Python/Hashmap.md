@@ -2,9 +2,7 @@
 
 ## What's Hashmap algorithm 
 
-Hashmap algorithm is sturctured for search an value saved in memory from a key. The advantege of this algorithm is that even you are increasing the number of keys, so also you are 
-increasing the map, the time for the search the key is equal. This works beacause the key are distributed in buckets, and each bucket have the same time per search because of the 
-use o a hash function that guarantee of a normalized distribuion. In python, the hashmap algorithm can be used with dictionary structure. 
+A hashmap is a data structure designed to retrieve a value stored in memory using a key. One of its main advantages is that even as the number of keys increases, the lookup time remains constant. This is possible because keys are distributed across buckets using a hash function, which ensures a uniform distribution. In Python, hashmaps are implemented using the dictionary data structure.
 
 In few words, HashMap is a data structure that allows save and find information quick from a key 
 
@@ -26,16 +24,35 @@ class Solution(object):
             seen[num] = i
 ```
 
+## What's set 
 
-HashMap ≠ Set
+First, let's understand the difference between a hashmap and a set. A hashmap asks if there is a specific key, and if there is, which value is assigned to it. A set just asks if there is a specific value.
 
-Set: só pergunta “existe?”
+A set works like a mathematical set. It does not repeat values, because repeated elements are treated as the same thing: {1, 1, 2} is actually {1, 2}. Like in mathematics, you can perform operations between subsets, such as union, intersection, and subtraction, and simetric difference.
 
-HashMap: pergunta “existe?” + “qual o valor associado?”
+<img width="1105" height="516" alt="image" src="https://github.com/user-attachments/assets/d042db44-9d5d-48e2-b7fa-73ab036517e0" />
 
 
-2️⃣ Contains Duplicate (LeetCode 217)
+## Exercise 
 
+### Contains Duplicate (LeetCode 217)
+
+```
+class Solution(object):
+    def containsDuplicate(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        seen = set()
+
+        for num in nums:
+            if num in seen: 
+                return True 
+            seen.add(num)
+        return False 
+
+```
 3️⃣ Valid Anagram (LeetCode 242)
 
 4️⃣ First Unique Character in a String (LeetCode 387)
